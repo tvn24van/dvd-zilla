@@ -16,7 +16,7 @@
     </main>
     <footer>
         &copy; <script>document.write(new Date().getFullYear())</script> <?php site_name() ?>
-        Wersja <?php site_version() ?>
+        <br>Wersja <?php site_version() ?>
     </footer>
 </body>
 </html>

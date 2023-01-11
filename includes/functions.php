@@ -46,7 +46,7 @@ function nav_menu($sep = ' | '){
  * it capitalizes the words.
  */
 function page_title(){
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Strona Główna';
 
     echo ucwords(str_replace('-', ' ', $page));
 }
@@ -57,7 +57,7 @@ function page_title(){
  * When not found, display the 404 error page.
  */
 function page_content(){
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+    $page = isset($_GET['page']) ? $_GET['page'] : 'glowna';
     $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
     if (! file_exists($path)) {
