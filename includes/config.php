@@ -9,7 +9,7 @@ function config($key = '')
 {
     $config = [
         'name' => 'DVD Zilla',
-        'site_url' => '/php_website',
+        'site_url' => '/dvd-zilla',
         'pretty_uri' => true,
         'nav_menu' => [
             '' => 'Strona główna',
