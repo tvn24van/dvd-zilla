@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <title><?php page_title() ?> | <?php site_name() ?></title>
     <link href="<?php site_url() ?>/template/css/style.css" rel="stylesheet"/>
-    <script defer src="<?php site_url() ?>/template/js/visuals.js"></script>
     <script defer src="<?php site_url() ?>/template/js/animatedTitle.js"></script>
+    <script defer src="<?php site_url() ?>/template/js/visuals.js"></script>
 </head>
 <body>
     <nav>

@@ -1,0 +1,2 @@
+
+AnimatedTitle.initEvents()
