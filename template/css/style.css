@@ -1,17 +1,29 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
+}
 
 main { 
-    padding: 25px; 
     text-align: center; 
-    /* box-shadow: 0 4px 25px -4px #9da5ab;  */
 }
-/* article { 
-    padding: 25px 0; 
-    line-height: 150%; 
-    text-align: left;
-} */
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav .logo{
+    width: 5%;
+    height: 5%;
+}
 
 nav .item {
     text-decoration: none;
+}
+nav .item:nth-child(2n){
+    margin-top: .5%;
 }
 nav .active {
     border-bottom: 1px solid;   
