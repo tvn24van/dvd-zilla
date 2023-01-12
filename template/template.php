@@ -35,9 +35,9 @@
                 <li>
                     W projekt zaangażowani byli następujący kontrybutorzy:
                     <ul>
-                        <li><img src="https://github.com/tvn24van.png"><a target="_blank" href="https://github.com/tvn24van">Wojciech Smaza</a></li>
-                        <li><img src="https://github.com/zahutech.png"><a target="_blank" href="https://github.com/zahutech">Michał Zahuta</a></li>
-                        <li><img src="https://github.com/R1kst3r.png"><a target="_blank" href="https://github.com/R1kst3r">Adam Wróblewski</a></li>
+                        <li><a target="_blank" href="https://github.com/tvn24van"><img src="https://github.com/tvn24van.png">Wojciech Smaza</a></li>
+                        <li><a target="_blank" href="https://github.com/zahutech"><img src="https://github.com/zahutech.png">Michał Zahuta</a></li>
+                        <li><a target="_blank" href="https://github.com/R1kst3r"><img src="https://github.com/R1kst3r.png">Adam Wróblewski</a></li>
                     </ul>
                 </li>
                 <li>*Liczymy na solidną 3*</li>
