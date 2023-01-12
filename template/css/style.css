@@ -57,7 +57,7 @@ fieldset{
 }
 
 #mchammer{
-    position: sticky;
+    position: fixed;
     bottom: 0;
     animation: walking 15s linear infinite;
 }
