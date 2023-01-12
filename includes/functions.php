@@ -27,7 +27,7 @@ function site_version(){
 function nav_menu($sep = ' | '){
     $nav_menu = '';
     $nav_items = config('nav_menu');
-    $nav_menu .= '<img class="logo" src="'. config('site_url') .'/template/img/logo.png" alt="Logo">';
+    $nav_menu .= '<img class="logo" src="'. config('site_url') .'/template/img/logo.svg" alt="Logo">';
     foreach ($nav_items as $uri => $name) {
         $query_string = str_replace('page=', '', $_SERVER['QUERY_STRING'] ?? '');
         $class = $query_string == $uri ? ' active' : '';
