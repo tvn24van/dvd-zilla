@@ -53,13 +53,28 @@ button, nav, footer, fieldset legend, select{
 
 fieldset{
     margin: 5%;
-    /* padding: 5% !important; */
 }
 
 #mchammer{
     position: fixed;
     bottom: 0;
     animation: walking 15s linear infinite;
+    cursor: help;
+}
+
+#webAward{
+    margin: 5vh;
+}
+
+.footer-window-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.spaceAround{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 }
 
 .rainbow-animation{
@@ -90,6 +105,7 @@ fieldset{
     background-image: url('/dvd-zilla/template/img/fillers/flames-no-bg.gif');
     background-repeat: repeat-x;
     background-position: bottom;
+    padding-bottom: 8vh !important;
 }
 
 @keyframes rainbowAnimation{

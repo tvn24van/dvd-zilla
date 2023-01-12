@@ -30,7 +30,7 @@
                 <button aria-label="Close"></button>
             </div>
         </div>
-        <div class="window-body">
+        <div class="window-body footer-window-body">
             <ul class="tree-view">
                 <li>
                     W projekt zaangażowani byli następujący kontrybutorzy:
@@ -49,8 +49,9 @@
                     </ul>
                 </li>
             </ul>
+            <img id="webAward" src="<?php site_url() ?>/template/img/fillers/community.gif" alt="Web award">
         </div>
+        <img id="mchammer" src="<?php site_url() ?>/template/img/fillers/mchammer.gif" alt="mchammer">
     </footer>
-    <img id="mchammer" src="<?php site_url() ?>/template/img/fillers/mchammer.gif" alt="mchammer">
 </body>
 </html>
