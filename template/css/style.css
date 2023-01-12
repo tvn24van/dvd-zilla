@@ -1,5 +1,5 @@
 body{
-    background-image: url("/dvd-zilla/template/img/fillers/funky.gif");
+    background-image: url("/dvd-zilla/template/img/fillers/microfab.gif");
     padding: 0;
     margin: 0;
     font-family: var(--defaultFont);
@@ -10,9 +10,8 @@ nav{
     flex-direction: row;
     align-items: center;
     color: var(--yellow);
-}
-
-nav .logo{
+    margin: 1%;
+}nav .logo{
     width: 7%;
     height: 7%;
 }nav .item {
@@ -22,6 +21,11 @@ nav .logo{
     margin-top: .5%;
 }nav .active {
     border-bottom: 1px solid;   
+}nav .certificate{
+    margin-left: auto;
+}nav .certificate:nth-child(2n){
+    margin-right: auto;
+    margin-top: 3%;
 }
 
 main { 
@@ -31,7 +35,7 @@ main {
 footer{
     width: 40%;
     margin-left: 30%;
-    margin-top: 15%;
+    margin-top: 5%;
 }footer .window-body{
     font-size: 1.5em;
 }footer .tree-view img{
@@ -47,13 +51,24 @@ button, nav, footer, fieldset legend, select{
     user-select: none;
 }
 
+fieldset{
+    margin: 5%;
+    /* padding: 5% !important; */
+}
+
 .rainbow-animation{
-    background-image: var(--rainbow);
+    /* background-image: var(--rainbow);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     color: transparent;
-    animation: rainbowAnimation 35s linear infinite;
+    animation: rainbowAnimation 35s linear infinite; */
+
+    background-image: url('/dvd-zilla/template/img/fillers/rainbow.gif');
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent; 
 }
 
 .defaultFont{
@@ -61,7 +76,14 @@ button, nav, footer, fieldset legend, select{
 }
 
 .rainbow{
-    background: var(--rainbow);
+    /* background: var(--rainbow); */
+    background-image: url('/dvd-zilla/template/img/fillers/rainbow.gif');
+}
+
+.bottomFlames{
+    background-image: url('/dvd-zilla/template/img/fillers/flames-no-bg.gif');
+    background-repeat: repeat-x;
+    background-position: bottom;
 }
 
 @keyframes rainbowAnimation{

@@ -36,6 +36,10 @@ function nav_menu($sep = ' | '){
         // Add nav item to list. See the dot in front of equal sign (.=)
         $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
     }
+    $images = ['notepad.gif', 'webtrips.gif', 'ie.gif'];
+    foreach($images as $image){
+        $nav_menu .= '<img class="certificate" src="'.config('site_url').'/template/img/fillers/'.$image.'">';
+    }
 
     echo trim($nav_menu, $sep);
 }
