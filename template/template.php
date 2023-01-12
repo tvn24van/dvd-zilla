@@ -17,11 +17,39 @@
     </nav>
     <main>
         <?php page_content() ?>
-        <!-- sram -->
     </main>
-    <footer>
-        &copy; <script>document.write(new Date().getFullYear())</script> <?php site_name() ?>
-        <br>Wersja <?php site_version() ?>
+
+    <footer class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                &copy; <script>document.write(new Date().getFullYear())</script> <?php echo(config('name').' v'.config('version')) ?>
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <ul class="tree-view">
+                <li>
+                    W projekt zaangażowani byli następujący kontrybutorzy:
+                    <ul>
+                        <li><img src="https://github.com/tvn24van.png"><a target="_blank" href="https://github.com/tvn24van">Wojciech Smaza</a></li>
+                        <li><img src="https://github.com/zahutech.png"><a target="_blank" href="https://github.com/zahutech">Michał Zahuta</a></li>
+                        <li><img src="https://github.com/R1kst3r.png"><a target="_blank" href="https://github.com/R1kst3r">Adam Wróblewski</a></li>
+                    </ul>
+                </li>
+                <li>*Liczymy na solidną 3*</li>
+                <li>
+                    Źródła
+                    <ul>
+                        <li><a target="_blank" href="https://github.com/jdan/98.css">98.css</a></li>
+                        <li><a target="_blank" href="https://github.com/divshot/geo-bootstrap">Zdjęcia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>

@@ -4,4 +4,6 @@
     --yellow: #fff200;
 
     --rainbow: linear-gradient(90deg, red,orange,yellow,green,blue,indigo,violet, red);
+    
+    --defaultFont: Comic Sans MS,Arial,Helvetica,sans-serif;
 }
