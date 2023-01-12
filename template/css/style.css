@@ -56,6 +56,12 @@ fieldset{
     /* padding: 5% !important; */
 }
 
+#mchammer{
+    position: sticky;
+    bottom: 0;
+    animation: walking 15s linear infinite;
+}
+
 .rainbow-animation{
     /* background-image: var(--rainbow);
     background-clip: text;
@@ -88,4 +94,14 @@ fieldset{
 
 @keyframes rainbowAnimation{
     to {background-position: 4500vh;}
+}
+
+@keyframes walking{
+    0%{left: 0;}
+    10%{left: 1%;}
+    25%{left: 8%;}
+    26%{left: 5%;}
+    27%{left: 8%;}
+    60%{left: 30%;}
+    100%{left: 0;}
 }

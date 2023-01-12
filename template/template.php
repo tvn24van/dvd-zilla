@@ -51,5 +51,6 @@
             </ul>
         </div>
     </footer>
+    <img id="mchammer" src="<?php site_url() ?>/template/img/fillers/mchammer.gif" alt="mchammer">
 </body>
 </html>
