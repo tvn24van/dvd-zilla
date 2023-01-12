@@ -1,0 +1,7 @@
+:root{ /* Sample usage: var(--fontColor) */
+    --blue: #1509ff;
+    --gray: #adadad;
+    --yellow: #fff200;
+
+    --rainbow: linear-gradient(90deg, red,orange,yellow,green,blue,indigo,violet, red);
+}
