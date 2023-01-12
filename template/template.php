@@ -17,6 +17,7 @@
     </nav>
     <main>
         <?php page_content() ?>
+        <!-- sram -->
     </main>
     <footer>
         &copy; <script>document.write(new Date().getFullYear())</script> <?php site_name() ?>
