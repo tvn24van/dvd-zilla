@@ -1,42 +1,55 @@
 body{
+    background-image: url("/dvd-zilla/template/img/fillers/funky.gif");
     padding: 0;
     margin: 0;
     font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
 }
 
 main { 
-    text-align: center; 
+    text-align: center;
+    background: var(--gray);
 }
 
 nav{
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: var(--yellow);
 }
 
 nav .logo{
-    width: 5%;
-    height: 5%;
-}
-
-nav .item {
+    width: 7%;
+    height: 7%;
+}nav .item {
     text-decoration: none;
-}
-nav .item:nth-child(2n){
+    color: var(--yellow);
+}nav .item:nth-child(2n){
     margin-top: .5%;
-}
-nav .active {
+}nav .active {
     border-bottom: 1px solid;   
 }
 
-/* @media only screen and (min-width: 768px) {
-    article { 
-        padding: 40px; 
-    }
-    main { 
-        max-width: 750px; 
-        margin: 50px auto;
-        padding: 30px 40px;
-    }
-} */
-    
+button:enabled, select{
+    cursor: pointer;
+}
+
+button, nav, footer{
+    user-select: none;
+}
+
+.rainbow-animation{
+    background-image: var(--rainbow);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbowAnimation 35s linear infinite;
+}
+
+.rainbow{
+    background: var(--rainbow);
+}
+
+@keyframes rainbowAnimation{
+    to {background-position: 4500vh;}
+}
