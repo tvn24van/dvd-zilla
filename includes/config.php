@@ -16,7 +16,6 @@ function config($key = '')
             'o-nas' => 'O nas',
             'produkty' => 'Produkty',
             'panel' => 'Panel zarzadzania',
-            // 'dodajRezysera' => 'dodaj-rezysera',
             'kontakt' => 'Kontakt',
         ],
         'template_path' => 'template',
