@@ -1,19 +1,50 @@
 <fieldset class="window">
     <legend>Jakis tytul</legend>
 
-    <form action="dodaj-rezysera" method="post">
+    <form action="dodaj/rezysera" method="post">
         <table>
             <tr>
                 <td>Imię:</td>
                 <td><input type="text" name="imieR" size=10px></td>
-            </tr>
-            <tr>
                 <td>Nazwisko:</td>
                 <td><input type="text" name="nazwiskoR" size=10px></td>
             </tr>
         </table>
         <br/>
         <input type="submit" value="DODAJ REŻYSERA" />
+    </form>
+
+    <form action="dodaj/wytwornie" method="post">
+        <table>
+            <tr>
+                <td>Nazwa wytwórni:</td>
+                <td><input type="text" name="wytwornia" size=10px></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="DODAJ WYTWÓRNIE" />
+    </form>
+
+    <form action="dodaj/kategorie" method="post">
+        <table>
+            <tr>
+                <td>Kategoria:</td>
+                <td><input type="text" name="kategoria" size=10px></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="DODAJ KATEGORIĘ" />
+    </form>
+
+    <form action="dodaj/gatunek" method="post">
+        <table>
+            <tr>
+                <td>Nazwa gatunku:</td>
+                <td><input type="text" name="gatunek" size=10px></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="DODAJ GATUNEK" />
     </form>
 
 </fieldset>
