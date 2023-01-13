@@ -1,50 +1,61 @@
-<fieldset class="window">
-    <legend>Jakis tytul</legend>
+<style>
+    form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 5%;
+    }form legend{
+        margin-right:2%;
+    }
+</style>
+
+<fieldset class="window bottomFlames">
+    <legend>Panel zarządzania</legend>
 
     <form action="dodaj/rezysera" method="post">
-        <table>
-            <tr>
-                <td>Imię:</td>
-                <td><input type="text" name="imieR" size=10px></td>
-                <td>Nazwisko:</td>
-                <td><input type="text" name="nazwiskoR" size=10px></td>
-            </tr>
-        </table>
-        <br/>
-        <input type="submit" value="DODAJ REŻYSERA" />
+        <legend>Dodawanie reżysera</legend>
+        <label>
+            Imię:
+            <input type="text" name="imieR">
+        </label>
+        <label>
+            Nazwisko:
+            <input type="text" name="nazwiskoR">
+        </label>
+        <input type="submit" value="DODAJ REŻYSERA">
     </form>
+
+    <hr>
 
     <form action="dodaj/wytwornie" method="post">
-        <table>
-            <tr>
-                <td>Nazwa wytwórni:</td>
-                <td><input type="text" name="wytwornia" size=10px></td>
-            </tr>
-        </table>
-        <br/>
-        <input type="submit" value="DODAJ WYTWÓRNIE" />
+        <legend>Dodawanie wytwórni</legend>
+        <label>
+            Nazwa wytwórni:
+            <input type="text" name="wytwornia">
+        </label>
+        <input type="submit" value="DODAJ WYTWÓRNIE">
     </form>
+
+    <hr>
 
     <form action="dodaj/kategorie" method="post">
-        <table>
-            <tr>
-                <td>Kategoria:</td>
-                <td><input type="text" name="kategoria" size=10px></td>
-            </tr>
-        </table>
-        <br/>
-        <input type="submit" value="DODAJ KATEGORIĘ" />
+        <legend>Dodawanie kategorii</legend>
+        <label>
+            Kategoria:
+            <input type="text" name="kategoria">
+        </label>
+        <input type="submit" value="DODAJ KATEGORIĘ">
     </form>
 
+    <hr>
+
     <form action="dodaj/gatunek" method="post">
-        <table>
-            <tr>
-                <td>Nazwa gatunku:</td>
-                <td><input type="text" name="gatunek" size=10px></td>
-            </tr>
-        </table>
-        <br/>
-        <input type="submit" value="DODAJ GATUNEK" />
+        <legend>Dodawanie gatunku</legend>
+        <label>
+            Nazwa gatunku:
+            <input type="text" name="gatunek">
+        </label>
+        <input type="submit" value="DODAJ GATUNEK">
     </form>
 
 </fieldset>

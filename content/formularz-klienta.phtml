@@ -1,49 +1,66 @@
-<fieldset class="window">
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }form label{
+        margin-top:2%;
+    }
+</style>
+
+<fieldset class="window bottomFlames">
     <legend>Formularz klienta</legend>
     <form action="dodaj/klienta" method="post">
-        <table>
-            <tr>
-                <td>Imie:</td>
-                <td><input type="text" name="imieK" size=10px></td>
-            </tr>
-            <tr>
-                <td>Nazwisko:</td>
-                <td><input type="text" name="nazwiskoK" size=10px></td>
-            </tr>
-            <tr>
-                <td>Nr. Dowodu:</td>
-                <td><input type="text" name="nDowodu" size=10px></td>
-            </tr>
-            <tr>
-                <td>PESEL:</td>
-                <td><input type="text" name="nPesel" size=10px></td>
-            </tr>
-            <tr>
-                <td>Telefon:</td>
-                <td><input type="text" name="nTelefonu" size=10px></td>
-            </tr>
-            <tr>
-                <td>Miejscowość:</td>
-                <td><input type="text" name="miejscowosc" size=10px></td>
-            </tr>
-            <tr>
-                <td>Ulica:</td>
-                <td><input type="text" name="ulica" size=10px></td>
-            </tr>
-            <tr>
-                <td>Kod Pocztowy:</td>
-                <td><input type="text" name="kodPocztowy" size=10px></td>
-            </tr>
-            <tr>
-                <td>Nr. budynku:</td>
-                <td><input type="text" name="nrBudynku" size=10px></td>
-            </tr>
-            <tr>
-                <td>Nr. Mieszkania:</td>
-                <td><input type="text" name="nrMieszkania" size=10px></td>
-            </tr>
-        </table>
-        <br/>
+        <label>
+            Imie:
+            <input type="text" name="imieK">
+        </label>
+
+        <label>
+            Nazwisko:
+            <input type="text" name="nazwiskoK">
+        </label>
+
+        <label>
+            Nr. Dowodu:
+            <input type="text" name="nDowodu">
+        </label>
+
+        <label>
+            PESEL:
+            <input type="text" name="nPesel">
+        </label>
+
+        <label>
+            Telefon:
+            <input type="text" name="nTelefonu">
+        </label>
+
+        <label>
+            Miejscowość:
+            <input type="text" name="miejscowosc">
+        </label>
+
+        <label>
+            Ulica:
+            <input type="text" name="ulica">
+        </label>
+
+        <label>
+            Kod Pocztowy:
+            <input type="text" name="kodPocztowy">
+        </label>
+
+        <label>
+            Nr. budynku:
+            <input type="text" name="nrBudynku">
+        </label>
+
+        <label>
+        Nr. Mieszkania:
+            <input type="text" name="nrMieszkania">
+        </label>
+
         <input type="submit" value="DODAJ KLIENTA" />
     </form>
 </fieldset>

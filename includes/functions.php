@@ -38,7 +38,7 @@ function nav_menu($sep = ' | '){
     }
     $images = ['notepad.gif', 'webtrips.gif', 'ie.gif'];
     foreach($images as $image){
-        $nav_menu .= '<img class="certificate" src="'.config('site_url').'/template/img/fillers/'.$image.'">';
+        $nav_menu .= '<img class="certificate" src="'.config('site_url').'/template/img/fillers/'.$image.'" alt="certificate">';
     }
 
     echo trim($nav_menu, $sep);

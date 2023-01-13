@@ -37,24 +37,28 @@ footer{
     width: 40%;
     margin-left: 30%;
     margin-top: 5%;
-}footer .window-body{
-    font-size: 1.5em;
+}footer .tree-view{
+    font-size: 1.2em !important;
 }footer .tree-view img{
-    width: 4%;
-    height: 4%;
+    width: 8%;
+    height: 8%;
 }
 
 button:enabled, select, input[type="submit"]{
     cursor: pointer;
 }
 
-button, nav, footer, fieldset legend, select{
+button, nav, footer, fieldset legend, select, label{
     user-select: none;
 }
 
 fieldset{
     margin: 5%;
     font-size: 1.5em !important;
+}
+
+label{
+    font-size: 1.1em !important;
 }
 
 #mchammer{
