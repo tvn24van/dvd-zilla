@@ -20,6 +20,14 @@ function config($key = '')
         ],
         'template_path' => 'template',
         'content_path' => 'content',
+
+        'db' => [
+            'host' => 'localhost',
+            'username' => 'root',
+            'password' => '',
+            'database' => 'wypozyczalnia'
+        ],
+
         'version' => '0.1',
     ];
 

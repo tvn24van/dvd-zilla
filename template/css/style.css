@@ -11,6 +11,7 @@ nav{
     align-items: center;
     color: var(--yellow);
     margin: 1%;
+    font-size: 1.1em;
 }nav .logo{
     width: 7%;
     height: 7%;
@@ -43,7 +44,7 @@ footer{
     height: 4%;
 }
 
-button:enabled, select{
+button:enabled, select, input[type="submit"]{
     cursor: pointer;
 }
 
@@ -53,6 +54,7 @@ button, nav, footer, fieldset legend, select{
 
 fieldset{
     margin: 5%;
+    font-size: 1.5em !important;
 }
 
 #mchammer{
