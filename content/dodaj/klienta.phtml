@@ -14,11 +14,25 @@
 
     $con = createConnection();
 
-    $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, $nrMieszkania];
-    
-    $addressQuery = $con->query("INSERT into adres values(". join(', ', $addressValues) .")");
+    $checkingQuery = $con->query("SELECT * from adres where Miejscowosc=".w($miejscowosc).
+        " AND Ulica=".w($ulica).
+        " AND `Kod Pocztowy`=".w($kodPocztowy).
+        " AND `Nr Budynku`=".$nrBudynku.
+        " AND `Nr Mieszkania`=".$nrMieszkania.
+        " LIMIT 1"
+    );
 
-    $values = ['null', w($imieK), w($nazwiskoK), w($nDowodu), w($nTelefonu), w($nPesel), mysqli_insert_id($con)];
+    $addressId;
+    if(mysqli_affected_rows($con) <= 0){
+        $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, $nrMieszkania];
+    
+        $addressQuery = $con->query("INSERT into adres values(". join(', ', $addressValues) .")");
+        $addressId = mysqli_insert_id($con);
+    }else{
+        $addressId = $checkingQuery->fetch_assoc()['ID'];
+    }
+
+    $values = ['null', w($imieK), w($nazwiskoK), w($nDowodu), w($nTelefonu), w($nPesel), $addressId];
 
     $query = $con->query("INSERT into klienci values(". join(', ', $values) .")");
 
