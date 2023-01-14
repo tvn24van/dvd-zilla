@@ -1,0 +1,14 @@
+<?php
+    require_once 'includes/db.php';
+
+    $id = $_POST['film'];
+
+    $con = createConnection();
+
+    $query = $con->query("INSERT into egzemplarze values(null, ".$id.", 1)");
+    $con->close();
+?>
+<fieldset class="window bottomFlames">
+    <legend>Dodawanie Egzemplarza</legend>
+    Dodano egzemplarz
+</fieldset>

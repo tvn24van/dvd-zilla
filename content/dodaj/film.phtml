@@ -1,3 +1,8 @@
+
+<fieldset class="window bottomFlames">
+    <legend>Dodawanie filmu</legend>
+
+
 <?php
         require_once 'includes/db.php';
         $con = createConnection();
@@ -23,7 +28,6 @@
         $html3 .= '</select>';
 
         echo '<form action="film2" method="post">
-                <legend>Dodawanie filmu</legend>
                 <label>';
 
         echo    '<label>
@@ -46,3 +50,5 @@
 
 
         $con -> close();
+    ?>
+</fieldset>
