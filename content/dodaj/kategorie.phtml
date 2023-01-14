@@ -1,2 +1,12 @@
 <?php
+
+        require_once 'includes/db.php';
         $kategoria = $_POST['kategoria'];
+    
+        $con =  createConnection();
+        
+        $query = $con -> query("INSERT into `kategoria wiekowa` values(null, ".w($kategoria).")");
+    
+        echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
+    
+        $con -> close();
