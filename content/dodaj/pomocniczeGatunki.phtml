@@ -1,0 +1,19 @@
+<?php
+        require_once 'includes/db.php';
+        $con = createConnection();
+        $queryG = $con->query("SELECT * from gatunki ORDER BY Gatunek");
+        $html = '<select>';
+        while($gatunki = mysqli_fetch_array($queryG)){
+           $html .= '<option value="' . $gatunki['ID']. '">' . $gatunki['Gatunek']  . '</option>';
+        }
+        $html .= '</select>';
+    
+        echo '<form action="dodaj/film2" method="post">
+                    <legend>Dodawanie filmu 3</legend>
+                    <label>
+                        Gatunek:';
+            echo $html;
+            echo    '</label>
+                    <input type="submit" value="DODAJ KOLEJNY">
+                    <input type="submit" value="DALEJ">
+                </form>';

@@ -1,0 +1,15 @@
+<?php
+        require_once 'includes/db.php';
+        $tytul = $_POST['tytul'];
+        $rezyser = $_POST['rezyser'];
+        $wytwornia = $_POST['wytwornia'];
+        $kategoria = $_POST['kategoria'];
+
+        $con =  createConnection();
+        
+        $query = $con -> query("INSERT into `film` values(null, ".w($rezyser).", ".w($wytwornia).", ".w($kategoria).", ".w($tytul).")");
+
+        echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
+
+
+        $con -> close();
