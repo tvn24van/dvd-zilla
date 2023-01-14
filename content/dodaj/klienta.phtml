@@ -1,4 +1,6 @@
 <?php
+    require_once 'includes/db.php';
+
     $imieK = $_POST["imieK"];
     $nazwiskoK = $_POST["nazwiskoK"];
     $nDowodu = $_POST["nDowodu"];
@@ -9,3 +11,19 @@
     $kodPocztowy = $_POST["kodPocztowy"];
     $nrBudynku = $_POST["nrBudynku"];
     $nrMieszkania = $_POST["nrMieszkania"];
+
+    $con = createConnection();
+
+    $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, $nrMieszkania];
+    
+    $addressQuery = $con->query("INSERT into adres values(". join(', ', $addressValues) .")");
+
+    $values = ['null', w($imieK), w($nazwiskoK), w($nDowodu), w($nTelefonu), w($nPesel), mysqli_insert_id($con)];
+
+    $query = $con->query("INSERT into klienci values(". join(', ', $values) .")");
+
+    if(mysqli_affected_rows($con) != 1){
+        echo 'Juz wystepuje ten klient';
+    }
+
+    $con->close();

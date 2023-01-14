@@ -23,7 +23,7 @@ function config($key = '')
 
         'db' => [
             'host' => 'localhost',
-            'username' => 'root',
+            'user' => 'root',
             'password' => '',
             'database' => 'wypozyczalnia'
         ],
