@@ -15,6 +15,7 @@ function config($key = '')
             '' => 'Strona główna',
             'formularz-klienta' => 'Klienci',
             'produkty' => 'Produkty',
+            'wypozyczenia' => 'Wypozyczanie',
             'panel' => 'Panel zarzadzania',
             'kontakt' => 'Kontakt',
         ],
