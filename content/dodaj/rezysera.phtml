@@ -1,6 +1,12 @@
 <?php
+    require_once 'includes/db.php';
     $imieR = $_POST['imieR'];
     $nazwiskoR = $_POST['nazwiskoR'];
-    echo $imieR.' '.$nazwiskoR;
 
-    echo config('db')['host'];
+    $con =  createConnection();
+    
+    $query = $con -> query("INSERT into `rezyser` values(null, ".w($imieR).", ".w($nazwiskoR).")");
+
+    echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
+
+    $con -> close();

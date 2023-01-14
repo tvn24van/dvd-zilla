@@ -1,2 +1,12 @@
 <?php
-        $wytwornia = $_POST['wytwornia'];
+
+    require_once 'includes/db.php';
+    $wytwornia = $_POST['wytwornia'];
+
+    $con =  createConnection();
+    
+    $query = $con -> query("INSERT into `wytwornia` values(null, ".w($wytwornia).")");
+
+    echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
+
+    $con -> close();
