@@ -1,0 +1,48 @@
+<?php
+        require_once 'includes/db.php';
+        $con = createConnection();
+        $queryR = $con->query("SELECT * from rezyser ORDER BY Nazwisko");
+        $html1 = '<select name="rezyser">';
+        while($rezyser = mysqli_fetch_array($queryR)){
+           $html1 .= '<option value="' . $rezyser['ID']. '">' . $rezyser['Imie'] . " " . $rezyser['Nazwisko'] . '</option>';
+        }
+        $html1 .= '</select>';
+
+        $queryW = $con->query("SELECT * from wytwornia ORDER BY `Nazwa Wytwornii`");
+        $html2 = '<select name="wytwornia">';
+        while($wytwornia = mysqli_fetch_array($queryW)){
+           $html2 .= '<option value="' . $wytwornia['ID']. '">' . $wytwornia['Nazwa Wytwornii'] . '</option>';
+        }
+        $html2 .= '</select>';
+
+        $queryK = $con->query("SELECT * from `kategoria wiekowa`");
+        $html3 = '<select name="kategoria">';
+        while($kategoria = mysqli_fetch_array($queryK)){
+           $html3 .= '<option value="' . $kategoria['ID']. '">' . $kategoria['PEGI'] . '</option>';
+        }
+        $html3 .= '</select>';
+
+        echo '<form action="film2" method="post">
+                <legend>Dodawanie filmu</legend>
+                <label>';
+
+        echo    '<label>
+                    Tytuł:
+                    <input type="text" name="tytul">
+                </label>
+                    Reżyser:';
+        echo $html1;
+        echo    '</label>
+                <label>
+                    Wytwornia:';
+        echo $html2;
+        echo    '</label>
+                <label>
+                    Kategoria:';
+        echo $html3;
+        echo    '</label>
+                <input type="submit" value="DALEJ">
+            </form>';
+
+
+        $con -> close();
