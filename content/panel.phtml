@@ -31,7 +31,6 @@
         <label>
             Wybór filmów:
             <?php
-                require_once 'includes/db.php';
                 $con = createConnection();
         
                 $query = $con->query("SELECT ID, Tytul from film ORDER BY Tytul");

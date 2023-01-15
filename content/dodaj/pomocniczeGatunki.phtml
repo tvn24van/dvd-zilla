@@ -1,5 +1,4 @@
 <?php
-        require_once 'includes/db.php';
         $con = createConnection();
         $queryG = $con->query("SELECT * from gatunki ORDER BY Gatunek");
         $html = '<select>';

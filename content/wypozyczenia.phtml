@@ -21,7 +21,6 @@
         <label>
             Wybierz film:
             <?php
-                require_once 'includes/db.php';
                 $con = createConnection();
         
                 $query = $con->query("SELECT egzemplarze.ID, film.Tytul from egzemplarze inner join film on egzemplarze.`ID Filmu` = film.ID where egzemplarze.czyDostepny;");
@@ -44,7 +43,6 @@
     </form>
             
     <?php
-        include_once 'includes/db.php';
 
         if(isset($_POST['pesel'], $_POST['miesiace'], $_POST['film'])){
             $pesel = $_POST['pesel'];
