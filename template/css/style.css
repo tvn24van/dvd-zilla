@@ -15,6 +15,8 @@ nav{
 }nav .logo{
     width: 15vh;
     height: 15vh;
+}nav .logo:hover{
+    content: url("/dvd-zilla/template/img/fillers/7upspot.gif");
 }nav .item {
     text-decoration: none;
     color: var(--yellow);
