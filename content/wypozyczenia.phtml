@@ -13,7 +13,7 @@
 
     <img src="<?php site_url() ?>/template/img/fillers/geocities.jpg" alt="Geocities">
 
-    <form action="" method="post">
+    <form method="post">
         <label>
             Podaj PESEL klienta:
             <input type="text" name="pesel">
@@ -63,6 +63,7 @@
             }else
                 echo 'Nie znaleziono klienta o peselu '.$pesel;
             $con->close();
+            
         }
     ?>
 </fieldset>

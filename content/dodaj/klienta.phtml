@@ -23,7 +23,10 @@
 
     $addressId;
     if(mysqli_affected_rows($con) <= 0){
-        $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, $nrMieszkania];
+        if($nrMieszkania==null)
+            $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, 'null'];
+        else
+            $addressValues = ['null', w($miejscowosc), w($ulica), w($kodPocztowy), $nrBudynku, $nrMieszkania];
     
         $addressQuery = $con->query("INSERT into adres values(". join(', ', $addressValues) .")");
         $addressId = mysqli_insert_id($con);
@@ -38,5 +41,3 @@
     if(mysqli_affected_rows($con) != 1){
         echo 'Juz wystepuje ten klient';
     }
-
-    $con->close();
