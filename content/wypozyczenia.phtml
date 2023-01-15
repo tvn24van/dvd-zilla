@@ -54,10 +54,10 @@
             $userQuery=$con->query("SELECT ID from klienci where PESEL=".w($pesel)." limit 1");
             if($userQuery!==false){
                 $idKlienta = $userQuery->fetch_assoc()['ID'];
-                $values=['null', $idKlienta, $cena, 'NOW()', 'DATE_ADD(NOW(), INTERVAL '.$miesiace.' MONTH)', $idEgzemplarza];
+                $values=['null', $idKlienta, $cena, 'NOW()', 'DATE_ADD(NOW(), INTERVAL '.$miesiace.' MONTH)', 'null' , $idEgzemplarza];
 
                 $con->query("INSERT into wypozyczenia values(". join(', ', $values) .")");
-                echo 'Wypozyczono egzemplarz';
+                echo 'Wypozyczono egzemplarz, cena wynosi: '.$cena.' zł.';
 
                 $con->query("UPDATE egzemplarze set czyDostepny=0 where ID=".$idEgzemplarza);
             }else

@@ -13,10 +13,11 @@ function config($key = '')
         'pretty_uri' => true,
         'nav_menu' => [
             '' => 'Strona główna',
-            'formularz-klienta' => 'Klienci',
-            'produkty' => 'Produkty',
             'wypozyczenia' => 'Wypozyczanie',
+            'zwroty' => 'Zwroty',
+            'formularz-klienta' => 'Klienci',
             'panel' => 'Panel zarzadzania',
+            'produkty' => 'Produkty',
             'kontakt' => 'Kontakt',
         ],
         'template_path' => 'template',

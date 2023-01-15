@@ -24,21 +24,24 @@
 
         switch($_POST['filter']){
             case 'available':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
                 "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
+                "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ".
                 "where egzemplarze.czyDostepny";
                 break;
             case 'all':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
-                "inner join rezyser on film.`ID Rezysera`=rezyser.ID ";
+                "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
+                "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ";
                 break;
             case 'late':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
                 "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
                 "inner join wypozyczenia on wypozyczenia.`ID Egzemplarza`=egzemplarze.ID ".
+                "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ".
                 "where wypozyczenia.`Termin Oddania` < now() and ".
                 "egzemplarze.czyDostepny=0";
                 break;
