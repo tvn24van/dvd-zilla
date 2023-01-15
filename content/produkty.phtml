@@ -8,32 +8,53 @@
         <select name="filter">
             <option value="available">Dostepne</option>
             <option value="all">Wszystkie</option>
+            <option value="late">Spoznione</option>
         </select>
         <input type="submit" value="FILTRUJ">
     </form>
 
     
     <?php
+        if(!isset($_POST['filter']))
+            return;
+        
         $con = createConnection();
 
-        $query=$con->query(
-            "SELECT * from egzemplarze inner join film on egzemplarze.`ID Filmu`=film.ID where egzemplarze.czyDostepny"
-        );
+        $query;
+
+        switch($_POST['filter']){
+            case 'available':
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                "inner join film on egzemplarze.`ID Filmu`=film.ID ".
+                "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
+                "where egzemplarze.czyDostepny";
+                break;
+            case 'all':
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                "inner join film on egzemplarze.`ID Filmu`=film.ID ".
+                "inner join rezyser on film.`ID Rezysera`=rezyser.ID ";
+                break;
+            case 'late':
+                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko from egzemplarze ".
+                "inner join film on egzemplarze.`ID Filmu`=film.ID ".
+                "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
+                "inner join wypozyczenia on wypozyczenia.`ID Egzemplarza`=egzemplarze.ID ".
+                "where wypozyczenia.`Termin Oddania` < now() and ".
+                "egzemplarze.czyDostepny=0";
+                break;
+        }
+        $result = $con->query($query);
+
         $html = '';
-        while($film = mysqli_fetch_array($query)){
-            $html .= ' ' . $film['ID']. ' ' . $film['Tytul'] . ' ';
-         }
-
-        //  $query = "SELECT * FROM wypozyczenia WHERE `ID Egzemplarza` IN (SELECT ID FROM egzemplarze WHERE CzyDostepny = 0 AND `ID Filmu` IN (SELECT ID FROM film WHERE Tytul IN (SELECT Tytul FROM film WHERE ID IN (SELECT `ID filmu` FROM egzemplarze WHERE ID = `ID Egzemplarza`))))";
-
-        //  // Pobranie wyniku zapytania
-        //  $result = $con->query($query);
-         
-        //  // Pętla przez wynik zapytania
-        //  while ($row = $result->fetch_assoc()) {
-        //      echo "<p>" . $row['ID Egzemplarza'] . " " . $row['ID Klienta'] . " " . $row['Data Wypozyczenia'] . "</p>";
-        //  }
-
+        while($array = mysqli_fetch_array($result)){
+            foreach($array as $key => $value){
+                if(is_numeric($key))
+                    $html .= ' '.$value;
+            }
+            $html .= '<br>';
+        }
+        echo $html;
+        $con->close();
     ?>
 
 </fieldset>
