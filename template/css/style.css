@@ -17,6 +17,7 @@ nav{
     height: 15vh;
 }nav .logo:hover{
     content: url("/dvd-zilla/template/img/fillers/7upspot.gif");
+    cursor: none;
 }nav .item {
     text-decoration: none;
     color: var(--yellow);
@@ -55,7 +56,7 @@ button, nav, footer, fieldset legend, select, label{
 }
 
 fieldset{
-    margin: 5%;
+    margin: 10vh;
     font-size: 1.5em !important;
 }
 
@@ -63,11 +64,26 @@ label{
     font-size: 1.1em !important;
 }
 
+hr{
+    height: 1vh;
+}hr:nth-of-type(even){
+    background-image: url('/dvd-zilla/template/img/fillers/divider.gif');
+}hr:nth-of-type(odd){
+    background-image: url('/dvd-zilla/template/img/fillers/divider2.gif');
+}
+
 #mchammer{
     position: fixed;
     bottom: 0;
     animation: walking 15s linear infinite;
     cursor: help;
+}
+
+#wip{
+    position: absolute;
+    top:50vh;
+    right:-30vh;
+    transform: rotate(90deg);
 }
 
 #webAward{

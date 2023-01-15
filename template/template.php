@@ -52,6 +52,7 @@
             <img id="webAward" src="<?php site_url() ?>/template/img/fillers/community.gif" alt="Web award">
         </div>
         <img id="mchammer" src="<?php site_url() ?>/template/img/fillers/mchammer.gif" alt="mchammer">
+        <img id="wip" src="<?php site_url() ?>/template/img/fillers/wip.gif" alt="Under construction">
     </footer>
 </body>
 </html>
