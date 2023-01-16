@@ -8,7 +8,10 @@
         
         $query = $con -> query("INSERT into `film` values(null, ".w($rezyser).", ".w($wytwornia).", ".w($kategoria).", ".w($tytul).")");
 
-        echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
-
+        if($query==false)
+                echo 'Nie udalo sie dodać filmu.';
 
         $con -> close();
+
+        header('Location: '.config('site_url').'/dodaj/film');
+        exit();

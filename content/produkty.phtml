@@ -24,39 +24,41 @@
 
         switch($_POST['filter']){
             case 'available':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
+                $query = "SELECT count(*) as Ilosc, film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
                 "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
                 "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ".
-                "where egzemplarze.czyDostepny";
+                "where egzemplarze.czyDostepny group by `ID Filmu`";
                 break;
             case 'all':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
+                $query = "SELECT count(*) as Ilosc, film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
                 "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
-                "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ";
+                "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID group by `ID Filmu`";
                 break;
             case 'late':
-                $query = "SELECT film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
+                $query = "SELECT count(*) as Ilosc, film.Tytul, rezyser.Imie, rezyser.Nazwisko, wytwornia.`Nazwa Wytwornii` from egzemplarze ".
                 "inner join film on egzemplarze.`ID Filmu`=film.ID ".
                 "inner join rezyser on film.`ID Rezysera`=rezyser.ID ".
                 "inner join wypozyczenia on wypozyczenia.`ID Egzemplarza`=egzemplarze.ID ".
                 "inner join wytwornia on film.`ID Wytworni`=wytwornia.ID ".
-                "where wypozyczenia.`Termin Oddania` < now() and ".
-                "egzemplarze.czyDostepny=0";
+                "where wypozyczenia.`Termin Oddania` <= now() and ".
+                "`wypozyczenia`.`Faktyczy Termin Oddania` is null and ".
+                "egzemplarze.czyDostepny=0 group by `ID Filmu`";
                 break;
         }
         $result = $con->query($query);
 
-        $html = '';
+        $html = '<table>';
         while($array = mysqli_fetch_array($result)){
+            $html .= '<tr>';
             foreach($array as $key => $value){
                 if(is_numeric($key))
-                    $html .= ' '.$value;
+                    $html .= '<td>'.$value.'</td>';
             }
-            $html .= '<br>';
+            $html .= '</tr>';
         }
-        echo $html;
+        echo $html.'</table>';
         $con->close();
     ?>
 

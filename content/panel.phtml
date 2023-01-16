@@ -29,6 +29,10 @@
     <form action="dodaj/egzemplarz" method="post">
         <legend>Dodawanie egzemplarzy</legend>
         <label>
+            Ilosc:
+            <input type="number" name="amount" placeholder="Ilosc" value="1">
+        </label>
+        <label>
             Wybór filmów:
             <?php
                 $con = createConnection();
@@ -52,11 +56,11 @@
         <legend>Dodawanie reżysera</legend>
         <label>
             Imię:
-            <input type="text" name="imieR">
+            <input type="text" name="imieR" placeholder="Imie">
         </label>
         <label>
             Nazwisko:
-            <input type="text" name="nazwiskoR">
+            <input type="text" name="nazwiskoR" placeholder="Nazwisko">
         </label>
         <input type="submit" value="DODAJ REŻYSERA">
     </form>
@@ -67,7 +71,7 @@
         <legend>Dodawanie wytwórni</legend>
         <label>
             Nazwa wytwórni:
-            <input type="text" name="wytwornia">
+            <input type="text" name="wytwornia" placeholder="Wytwornia">
         </label>
         <input type="submit" value="DODAJ WYTWÓRNIE">
     </form>

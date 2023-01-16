@@ -41,3 +41,6 @@
     if(mysqli_affected_rows($con) != 1){
         echo 'Juz wystepuje ten klient';
     }
+
+    header('Location: '.config('site_url').'/formularz-klienta');
+    exit();

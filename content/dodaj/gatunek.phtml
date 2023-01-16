@@ -5,6 +5,7 @@
         
         $query = $con -> query("INSERT into `gatunki` values(null, ".w($gatunek).")");
 
-        echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
-
         $con -> close();
+
+        header('Location: '.config('site_url').'/panel');
+        exit();

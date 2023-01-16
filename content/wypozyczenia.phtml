@@ -34,7 +34,7 @@
             ?>
         </label>
         <label>
-            <p id="monthsLabel">Ilosc miesiecy: 1</p>
+            <p id="monthsLabel">Wypożyczasz na: 1 miesięcy. Cena wypożyczenia: 30</p>
             <label for="monthsRange">Mniej</label>
             <input name="miesiace" id="monthsRange" type="range" min="1" max="5" value="1" oninput="showMonthsRangeValue(this.value)">
             <label for="monthsRange">Wiecej</label>
@@ -60,6 +60,8 @@
                 echo 'Wypozyczono egzemplarz, cena wynosi: '.$cena.' zł.';
 
                 $con->query("UPDATE egzemplarze set czyDostepny=0 where ID=".$idEgzemplarza);
+                
+                
             }else
                 echo 'Nie znaleziono klienta o peselu '.$pesel;
             $con->close();
@@ -70,6 +72,6 @@
 
 <script>
     function showMonthsRangeValue(value){
-        document.querySelector("#monthsLabel").textContent='Ilosc miesiecy: '+value;
+        document.querySelector("#monthsLabel").textContent='Wypożyczasz na: '+value+' miesięcy. Cena wypożyczenia: '+value*30;
     }
 </script>

@@ -6,6 +6,7 @@
     
     $query = $con -> query("INSERT into `rezyser` values(null, ".w($imieR).", ".w($nazwiskoR).")");
 
-    echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
-
     $con -> close();
+
+    header('Location: '.config('site_url').'/panel');
+    exit();

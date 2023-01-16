@@ -5,6 +5,7 @@
     
     $query = $con -> query("INSERT into `wytwornia` values(null, ".w($wytwornia).")");
 
-    echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
-
     $con -> close();
+
+    header('Location: '.config('site_url').'/panel');
+    exit();

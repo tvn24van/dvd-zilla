@@ -6,7 +6,10 @@
         
         $query = $con -> query("INSERT into `gatunki pomocnicza` values(null, ".w($gatunek).", ".w($film).")");
 
-        echo 'wstawione wiersze: ' . mysqli_affected_rows($con);
-
+        if($query == false)
+                echo 'Nie dodano gatunku.';
 
         $con -> close();
+
+        header('Location: '.config('site_url').'/dodaj/film3');
+        exit();

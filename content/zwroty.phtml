@@ -1,0 +1,57 @@
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }form label{
+        margin-top:2%;
+    }
+</style>
+
+<fieldset class="window bottomFlames">
+    <legend>Zwroty</legend>
+
+    <img src="<?php site_url() ?>/template/img/fillers/americanflag.gif" alt="americafirst">
+
+    <form method="post">
+
+        <label>
+            Wybierz film:
+            <?php
+                $con = createConnection();
+        
+                $query = $con->query("SELECT egzemplarze.ID, film.Tytul from egzemplarze inner join film on egzemplarze.`ID Filmu` = film.ID where egzemplarze.czyDostepny=0;");
+                $html = '<select name="film">';
+                while($film = mysqli_fetch_array($query)){
+                   $html .= '<option value="' . $film['ID']. '">' . $film['Tytul'] . '</option>';
+                }
+                $html .= '</select>';
+                echo $html;
+                $con->close();
+            ?>
+        </label>
+        
+        <input type="submit" value="ZWRÓĆ">
+    </form>
+            
+    <?php
+
+        if(isset($_POST['film'])){
+            $idEgzemplarza = $_POST['film'];
+            $cena = 30;
+            $con=createConnection();
+
+            $con->query("UPDATE egzemplarze set czyDostepny=1 where ID=".$idEgzemplarza);
+            $con->query("UPDATE `wypozyczenia` SET `Faktyczy Termin Oddania` = now() WHERE `wypozyczenia`.`ID Egzemplarza` =".$idEgzemplarza." and `wypozyczenia`.`Faktyczy Termin Oddania` is null;");
+
+            $con->close();
+            
+        }
+    ?>
+</fieldset>
+
+<script>
+    function showMonthsRangeValue(value){
+        document.querySelector("#monthsLabel").textContent='Ilosc miesiecy: '+value;
+    }
+</script>
