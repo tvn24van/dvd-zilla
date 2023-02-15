@@ -1,6 +1,6 @@
 <div class="title-bar">
     <div class="title-bar-text">
-        &copy; <script>document.write(new Date().getFullYear())</script> <?php echo(config('name').' v'.config('version')) ?>
+        &copy; 2022 - <script>document.write(new Date().getFullYear())</script> <?php echo(config('name').' v'.config('version')) ?>
     </div>
     <div class="title-bar-controls">
         <button aria-label="Minimize"></button>
